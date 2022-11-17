@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "team/team-members",
+	"title": "Team Members",
+	"category": "media",
+	"icon": "admin-users",
+	"description": "A team members grid.",
+	"keywords": ["Team", "Members"],
+	"supports": {
+		"html": false
+	},
+	"textdomain": "team-members",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
