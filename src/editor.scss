@@ -1,9 +1,120 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-team-team-members{
+	display: block;
 
-.wp-block-create-block-boilerplate {
-	border: 1px dotted #f03;
+	@for $i from 1 to 6{
+		&.has-#{$i}-columns{
+			>.block-editor-inner-blocks > .block-editor-block-list__layout > {
+				[data-type="team/team-member"]{
+					width: calc(100% / #{$i} - 20px);
+				}
+				.block-list-appender{
+					align-self: stretch;
+					width: calc(100% / #{$i} - 20px);
+					border: 1px dashed;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					min-height: 70px;
+					position: inherit;
+				}
+			}
+		}
+	}
+
+	>.block-editor-inner-blocks > .block-editor-block-list__layout{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -10px;
+		margin-right: -10px;
+
+		[data-type="team/team-member"]{
+			max-width: none;
+			margin: 0;
+		}
+		>[data-type="team/team-member"]{
+			margin: 10px;
+
+			.block-editor-media-placeholder{
+				margin-bottom: 20px;
+			}
+
+			.wp-block-team-team-member-img{
+				position: relative;
+
+				&.is-loading img{
+					opacity: 0.3;
+				}
+
+				.components-spinner{
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+				}
+			}
+
+			& h4{
+				color: #222;
+				font-size: 22px;
+				font-weight: bold;
+				margin: 0;
+			}
+			& p{
+				color: #565656;
+				font-size: 16px;
+				font-weight: 300;
+				margin: 0;
+				margin-bottom: 5px;
+			}	
+			
+			& img{
+				height: auto;
+				max-width: 100%;
+				margin-bottom: 20px;
+			}		
+			
+			& .wp-block-team-team-member-social-links{
+				& ul{
+					list-style: none;
+					padding: 0;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					margin: 15px -5px 0;
+					
+					li{
+						margin: 5px;
+
+						span.dashicon{
+							color: #4e4e4e
+						}
+
+						button{
+							background: none;
+							border: none;
+							padding: 0;
+							cursor: pointer;
+							margin: 0;
+						}
+
+						&.wp-block-team-team-member-add-icons{
+							button{
+								outline: 1px dashed;
+								height: 18px;
+							}
+						}
+					}
+				}
+			}	
+			
+			.wp-block-team-team-member-link-form{
+				background: #fff;
+				border: 1px solid;
+				padding: 10px;
+				margin-top: 10px;
+			}
+		}
+	}
 }

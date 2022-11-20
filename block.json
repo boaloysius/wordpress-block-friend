@@ -3,14 +3,23 @@
 	"name": "team/team-members",
 	"title": "Team Members",
 	"category": "media",
-	"icon": "admin-users",
+	"icon": "groups",
 	"description": "A team members grid.",
-	"keywords": ["Team", "Members"],
+	"keywords": [
+		"Team",
+		"Members"
+	],
 	"supports": {
 		"html": false
 	},
 	"textdomain": "team-members",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+	"style": "file:./build/style-index.css",
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 2
+		}
+	}
 }
